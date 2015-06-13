@@ -13,7 +13,7 @@
     <appender name="fileAppenderDebug"
           class="org.apache.log4j.RollingFileAppender">
         <param name="Threshold" value="DEBUG" />
-        <param name="File" value="/var/log/rinxor/cloud/debug.log"/>
+        <param name="File" value="debug.log"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n" />
         </layout>
@@ -27,7 +27,7 @@
     <appender name="fileAppenderRun"
           class="org.apache.log4j.RollingFileAppender">
         <param name="Threshold" value="INFO" />
-        <param name="File" value="/var/log/rinxor/cloud/run.log"/>
+        <param name="File" value="run.log"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n" />
         </layout>
@@ -36,7 +36,7 @@
     <appender name="fileAppenderError"
           class="org.apache.log4j.RollingFileAppender">
         <param name="Threshold" value="ERROR" />
-        <param name="File" value="/var/log/rinxor/cloud/error.log"/>
+        <param name="File" value="error.log"/>
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n" />
         </layout>

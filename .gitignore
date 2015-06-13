@@ -10,3 +10,4 @@
 /web/*
 !/web/cp
 /web/cp/html/images/*.png
+*.log
