@@ -1,0 +1,12 @@
+.DS_Store
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+/target/
+
+/web/*
+!/web/cp
+/web/cp/html/images/*.png

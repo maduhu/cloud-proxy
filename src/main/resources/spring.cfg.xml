@@ -1,0 +1,51 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+    
+    <!--Mail sender-->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.example.com" />
+        <property name="port" value="587" />
+        <property name="username" value="sender@example.com" />
+        <property name="password" value="*****" />
+ 
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="mailer" class="com.rinxor.cloud.service.mail.Mailer">
+        <property name="mailSender" ref="mailSender" />
+        <property name="simpleMailMessage" ref="customeMailMessage" />
+    </bean>
+    <bean id="customeMailMessage"
+          class="org.springframework.mail.SimpleMailMessage">
+ 
+        <property name="from" value="sender@example.com" />
+        <property name="to" value="receive@example.com" />
+        <property name="subject" value="Cloud Support" />
+        <property name="text">
+            <value>
+		<![CDATA[
+			Dear %s,
+			Mail Content : %s
+		]]>
+            </value>
+        </property>
+    </bean>
+
+    <!--Task Scheduler-->
+    <task:scheduler id="taskScheduler"/>
+    <task:executor id="taskExecutor" pool-size="10"/>
+    <task:annotation-driven executor="taskExecutor" scheduler="taskScheduler"/>
+    
+    <!-- Auto async task -->
+    <bean id="asyncQueryCloudstackInfo" class="com.rinxor.cloud.task.AsyncQueryCloudstackInfo"/>
+    
+</beans>

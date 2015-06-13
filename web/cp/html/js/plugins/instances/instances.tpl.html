@@ -1,0 +1,57 @@
+
+<section class="row-fluid">
+    <div ng-controller="VirtualMachinesListCtrl">
+
+        <h3 class="box-header">
+            Virtual Machines    
+        </h3>
+        <div>
+            <div>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                OS
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Disk
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="virtualmachine in virtualmachines">
+                            <td>
+                                <a href="{{'/#/instances/' + virtualmachine.id}}">{{virtualmachine.displayname}}</a>
+                            </td>
+                            <td>
+                                <img src="images/icon-ubuntu.png" class="os-icon">
+                            </td>
+                            <td>
+                                Running
+                            </td>
+                            <td>
+                                20 GB
+                            </td>
+                            <td>
+                                12 Jan 2014
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</section>

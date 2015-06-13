@@ -1,0 +1,107 @@
+
+<section class="row-fluid" ng-controller="VirtualMachineDetailCtrl" ng-init="tab1='active'">
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a ng-click="tab1 = 'active';tab2 ='';tab3=''" data-toggle="tab">Details</a></li>
+        <li><a ng-click="tab1='';tab2 = 'active';tab3=''" data-toggle="tab">NICs</a></li>
+        <li><a ng-click="tab1='';tab2='';tab3 = 'active'" data-toggle="tab">Statistics</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane {{tab1}}">
+            <div class="btn-group">
+                <confirm on-ok="virtualmachine.start()" action="Start VirtualMachine">
+                    <button class="btn" ng-disabled="virtualmachine.isRunning()"><i class="fa fa-play"></i> Start</button>
+                </confirm>
+                <confirm on-ok="virtualmachine.stop()" action="Stop VirtualMachine">
+                    <button class="btn" ng-disabled="!virtualmachine.isRunning()"><i class="fa fa-stop"></i> Stop</button>
+                </confirm>
+                <confirm on-ok="virtualmachine.reboot()" action="Reboot VirtualMachine" >
+                    <button class="btn" ng-disabled="!virtualmachine.isRunning()"><i class="fa fa-repeat"></i> Reboot</button>
+                </confirm>
+                <confirm on-ok="virtualmachine.destroy()" action="Destroy VirtualMachine" >
+                    <button class="btn"><i class="fa fa-times"></i> Destroy</button>
+                </confirm>
+
+                <a ng-href="/client/console?cmd=access&vm={{virtualmachine.id}}" target="_blank"><button class="btn"><i class="fa fa-terminal"></i> Console</button></a>
+            </div>
+
+            <p></p>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Attribute
+                        </th>
+                        <th>
+                            Value
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="detail in details">
+                        <td>
+                            {{detail.name}}
+                        </td>
+                        <td>
+                            {{detail.value}}
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+        <div class="tab-pane {{tab2}}">
+            <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Attribute
+                            </th>
+                            <th>
+                                Value
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="nic in nics">
+                            <td>
+                                {{nic.name}}
+                            </td>
+                            <td>
+                                {{nic.value}}
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+        </div>
+        <div class="tab-pane {{tab3}}">
+            <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Attribute
+                            </th>
+                            <th>
+                                Value
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="statistic in statistics">
+                            <td>
+                                {{statistic.name}}
+                            </td>
+                            <td>
+                                {{statistic.value}}
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+        </div>
+    </div>
+    
+</section>

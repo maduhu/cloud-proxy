@@ -1,0 +1,148 @@
+<section class="row-fluid">
+    <div ng-controller="StorageListCtrl">
+        <h3 class="box-header">
+            Data Disks
+        </h3>
+        <a ng-click="toggleDataDisk = !toggleDataDisk" class="box-collapse pull-right">show/hide<i class="caret"></i></a>
+        <div ng-show="toggleDataDisk" class="box box-show-hide-animation" style="display: block;">
+            <div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                #
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Size
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                20 GB
+                            </td>
+                            <td>
+                                12 Jan 2014
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Jacob
+                            </td>
+                            <td>
+                                20 GB
+                            </td>
+                            <td>
+                                12 Jan 2014
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                Test
+                            </td>
+                            <td>
+                                5 GB
+                            </td>
+                            <td>
+                                7 Jan 2014
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <h3 class="box-header">
+            Snapshots
+        </h3>
+        <a ng-click="toggleSnapshots = !toggleSnapshots" class="box-collapse pull-right">show/hide<i class="caret"></i></a>
+        <div ng-show="toggleSnapshots" ng-animate="'box'" class="box box-show-hide-animation" style="display: block;">
+            <div>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                #
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Size
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                20 GB
+                            </td>
+                            <td>
+                                12 Jan 2014
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                Jacob
+                            </td>
+                            <td>
+                                20 GB
+                            </td>
+                            <td>
+                                12 Jan 2014
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                Test
+                            </td>
+                            <td>
+                                5 GB
+                            </td>
+                            <td>
+                                7 Jan 2014
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</section>

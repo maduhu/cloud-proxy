@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Rinxor configuration -->
+    <rinxorcloud>
+        <uniqueNodeId>1000</uniqueNodeId>
+        <bindAddress>0.0.0.0</bindAddress>
+        <bindPort>9998</bindPort>
+        <ssl>false</ssl>
+        <mysqlhost>localhost</mysqlhost>
+        <mysqlport>3306</mysqlport>
+        <mysqluser>root</mysqluser>
+        <mysqlpassword></mysqlpassword>
+    </rinxorcloud>
+    
+    <!-- Cloudstack configuration -->
+    <cloudstack>
+        <consoleUrl>http://localhost:8080/client/console</consoleUrl>
+        <apiUrl>http://localhost:8080/client/api</apiUrl>
+        <apiKey>wknbnlYzzEFLpemnJUz-Zq3FwODhx87JigEYkHuWyGQivhHx3RjGA9Gle-GRSI3MajZLHhdcbWuV88Ysb8Jang</apiKey>
+        <secretKey>yKpzXBpz3Grwt09P_gggbC3yZYhGse0vx9ac8kTA-MkQr3QK-sgblOAnK33kTxOeRsU0mQR4NzLjfoQfinItpQ</secretKey>
+        <rootDomainId>51f9ab1a-4b82-11e3-bc79-000c29222fe0</rootDomainId>
+    </cloudstack>
+</configuration>

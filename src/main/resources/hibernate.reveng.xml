@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="rinxorcloud"/>
+  <table-filter match-name="serviceoffering"/>
+  <table-filter match-name="networkoffering"/>
+  <table-filter match-name="diskoffering"/>
+  <table-filter match-name="cloudstackplan"/>
+  <table-filter match-name="cloudstackuser"/>
+  <table-filter match-name="iso"/>
+  <table-filter match-name="network"/>
+  <table-filter match-name="asyncjob"/>
+  <table-filter match-name="vmsusage"/>
+  <table-filter match-name="vmsusageminute"/>
+  <table-filter match-name="vmsusagehour"/>
+  <table-filter match-name="vmsusageday"/>
+  <table-filter match-name="vms"/>
+  <table-filter match-name="zone"/>
+  <table-filter match-name="planview"/>
+</hibernate-reverse-engineering>

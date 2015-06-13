@@ -1,0 +1,5 @@
+http://bootsnipp.com/
+https://github.com/petermelias/angular-chartjs
+https://github.com/earlonrails/angular-chartjs-directive
+http://fortawesome.github.io/Font-Awesome/
+http://openiconlibrary.sourceforge.net/

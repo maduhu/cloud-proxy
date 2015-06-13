@@ -1,0 +1,66 @@
+
+<!-- Server statistics
+                        ================================================== -->
+<section class="row-fluid">
+    <div ng-controller="DashboardCtrl">
+        <h3>
+            Resource available
+        </h3>
+        <div class="row">
+            <div class="span3">
+                Progress: <span class="pull-right strong">36%</span>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 36%;"></div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 col-md-3 pie-chart">
+                <cjs-doughnut class="knobchart" dataset="data1" options="option1" segement-stroke-width="0" width="110"> </cjs-doughnut>
+
+                <div class="caption">
+                    Storage
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 col-md-3 pie-chart">
+                <cjs-doughnut class="knobchart" dataset="data2" options="option2" segement-stroke-width="0" width="110">  </cjs-doughnut>
+
+                <div class="caption">
+                    CPU
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 col-md-3 pie-chart">
+                <cjs-doughnut class="knobchart" dataset="data3" options="option3" segement-stroke-width="0" width="110">  </cjs-doughnut>
+
+                <div class="caption">
+                    Bandwidth
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 col-md-3 pie-chart">
+                <cjs-doughnut class="knobchart" dataset="data4" options="option4" segement-stroke-width="0" width="110">  </cjs-doughnut>
+
+                <div class="caption">
+                    Server Load
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+
+        <!-- Another widget after Here -->
+        <div class="row">
+            <chart type="Line" value="lineChart" height="250"> </chart>
+        </div>
+        <div class="row">
+            <chart type="Bar" value="barChart" height="250"> </chart>
+        </div>
+        <div class="row">
+            <chart type="Pie" value="pieChart" height="250"> </chart>
+        </div>
+        
+    </div>
+
+</section>
+<!-- / Server statistics -->

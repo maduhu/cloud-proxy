@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+    <appender name="consoleAppender"
+          class="org.apache.log4j.ConsoleAppender">
+        <param name="Threshold" value="DEBUG" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n" />
+        </layout>
+    </appender>
+    
+    <appender name="fileAppenderDebug"
+          class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="DEBUG" />
+        <param name="File" value="/var/log/rinxor/cloud/debug.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelMatchFilter">
+            <param name="LevelToMatch" value="DEBUG" />
+            <param name="AcceptOnMatch" value="true"/>
+        </filter>
+        <filter class="org.apache.log4j.varia.DenyAllFilter" />
+    </appender>
+
+    <appender name="fileAppenderRun"
+          class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="INFO" />
+        <param name="File" value="/var/log/rinxor/cloud/run.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n" />
+        </layout>
+    </appender>
+    
+    <appender name="fileAppenderError"
+          class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="ERROR" />
+        <param name="File" value="/var/log/rinxor/cloud/error.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n" />
+        </layout>
+    </appender>
+    
+    <appender name="SYSLOG" class="org.apache.log4j.net.SyslogAppender">
+        <param name="Threshold" value="WARN"/>
+        <param name="SyslogHost" value="localhost"/>
+        <param name="Facility" value="LOCAL6"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p [%c{3}] (%t:%x) %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="com.entronica">
+        <level value="DEBUG"/>
+        <appender-ref ref="consoleAppender"/>
+        <appender-ref ref="fileAppenderRun"/>
+        <appender-ref ref="fileAppenderDebug"/>
+        <appender-ref ref="fileAppenderError"/>
+    </logger>
+
+</log4j:configuration>
